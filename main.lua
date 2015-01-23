@@ -1,8 +1,8 @@
 --project: NerfAppTimerProject
 --Adam Starbuck, Ryan Podany 2014
 
-globals = require( "globals" ) -- make this global
-coronium = require( "mod_coronium" ) -- make this global
+--globals = require( "globals" ) -- make this global
+--coronium = require( "mod_coronium" ) -- make this global
 composer = require("composer") -- make this global
 widget = require ( "widget" )
 
@@ -11,15 +11,15 @@ display.setStatusBar( display.HiddenStatusBar )
 -- widget.setTheme( "widget_theme_android_holo_dark" )
 
 --== Init Coronium
-coronium:init({ appId = globals.appId, apiKey = globals.apiKey })
+--coronium:init({ appId = globals.appId, apiKey = globals.apiKey })
 
 --== Store in globals module
-globals.coronium = coronium
+--globals.coronium = coronium
 
 --== Start composer
 display.setStatusBar( display.HiddenStatusBar )
 
-coronium:appOpened() --analytics
+--coronium:appOpened() --analytics
 
 --global variables for logging in and things
 --these variables are to store data based on user input and the input functions at the bottom of the scene:create function
@@ -32,19 +32,19 @@ font3 = 60
 font4 = 70
 font5 = 80
 
-function getObjectGlobal()
-	coronium:getObject( "testGameData", objId, function(e)
-		if not e.error then
-				gameTypeText = tostring(e.result.gameType)
-				teamNumText = tostring(e.result.numberTeams)
-				capNumText = tostring(e.result.numberCapts)
-				gameLengthText = tostring(e.result.gameLength)
-				TTSText = tostring(e.result.timeToStart)
-				isGameEnded = tostring(e.result.gameEnded)
-				--gameType = gameTypeText, numberTeams = teamNumText, numberCapts = capNumText, gameLength = gameLengthText, timeToStart =  TTSText
-			end
-	end)
-end
+-- function getObjectGlobal()
+-- 	coronium:getObject( "testGameData", objId, function(e)
+-- 		if not e.error then
+-- 				gameTypeText = tostring(e.result.gameType)
+-- 				teamNumText = tostring(e.result.numberTeams)
+-- 				capNumText = tostring(e.result.numberCapts)
+-- 				gameLengthText = tostring(e.result.gameLength)
+-- 				TTSText = tostring(e.result.timeToStart)
+-- 				isGameEnded = tostring(e.result.gameEnded)
+-- 				--gameType = gameTypeText, numberTeams = teamNumText, numberCapts = capNumText, gameLength = gameLengthText, timeToStart =  TTSText
+-- 			end
+-- 	end)
+-- end
 
 
 --a few global variables to store the input text in

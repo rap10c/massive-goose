@@ -16,15 +16,15 @@ function scene:create( event )
 
 
 	local function dartFunction( event )
-		composer.gotoScene( "darts" )
+		composer.gotoScene( "dartGuns" )
 	end
 
-	local login = widget.newButton{
+	local dart = widget.newButton{
 		id = "dartButton",
-		width = display.contentWidth/2,
+		width = display.contentWidth*.75,
 		height = 100,
 		emboss = true,
-		fontSize = font4,
+		fontSize = font3,
 		top = yCenter/2-100,
 		label = "Dart Shooters",
 		shape="roundedRect",
@@ -33,19 +33,19 @@ function scene:create( event )
 		fillColor = { default={ 232/255, 100/255, 37/255}, over={ 1, 1, 1, 1 } },
 		onRelease = dartFunction
 	}
-	login.x = xCenter/2
+	dart.x = xCenter/2
 
 
 	local function diskFunction( event )
-		composer.gotoScene( "disks" )
+		composer.gotoScene( "diskGuns" )
 	end
 
-	local register = widget.newButton{
+	local disk = widget.newButton{
 		id = "diskButton",
-		width = display.contentWidth/2,
+		width = display.contentWidth*.75,
 		height = 100,
 		emboss = true,
-		fontSize = font4,
+		fontSize = font3,
 		top = yCenter/2+100,
 		label = "Disk Shooters",
 		shape="roundedRect",
@@ -54,12 +54,12 @@ function scene:create( event )
 		fillColor = { default={ 232/255, 100/255, 37/255}, over={ 1, 1, 1, 1 } },
 		onRelease = diskFunction
 	}
-	register.x = xCenter/2
+	disk.x = xCenter/2
 
-	localGroup:insert(login)	
+	localGroup:insert(dart)	
 	localGroup:insert(message)
 	localGroup:insert(nerf)
-	localGroup:insert(register)
+	localGroup:insert(disk)
 
 end
 

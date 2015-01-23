@@ -6,6 +6,14 @@ local scene = composer.newScene()
 
 function scene:create( event )
 
+	local gunType = display.newText{	
+	text ="Dart-Type Weapons", 
+	x = xCenter, 
+	y = yCenter, 
+	font = native.systemFont, 
+	fontSize = font5,
+	width = display.contentWidth*.8,
+	align = "center"}
 
 	local function diskFunction( event )
 		composer.gotoScene( "dartManuel" )
@@ -13,7 +21,7 @@ function scene:create( event )
 
 	local manuel = widget.newButton{
 		id = "manuelButton",
-		width = display.contentWidth/2,
+		width = display.contentWidth*.8,
 		height = 100,
 		emboss = true,
 		fontSize = font4,
@@ -25,7 +33,8 @@ function scene:create( event )
 		fillColor = { default={ 232/255, 100/255, 37/255}, over={ 1, 1, 1, 1 } },
 		onRelease = manuelFunction
 	}
-
+	manuel.y = yCenter*.5
+	manuel.x = xCenter
 
 	local function diskFunction( event )
 		composer.gotoScene( "dartSemi" )
@@ -33,7 +42,7 @@ function scene:create( event )
 
 	local semiAuto = widget.newButton{
 		id = "semiButton",
-		width = display.contentWidth/2,
+		width = display.contentWidth*.8,
 		height = 100,
 		emboss = true,
 		fontSize = font4,
@@ -45,6 +54,8 @@ function scene:create( event )
 		fillColor = { default={ 232/255, 100/255, 37/255}, over={ 1, 1, 1, 1 } },
 		onRelease = semiFunction
 	}
+	semiAuto.y = yCenter*.75
+	semiAuto.x = xCenter
 
 
 	local function diskFunction( event )
@@ -53,7 +64,7 @@ function scene:create( event )
 
 	local auto = widget.newButton{
 		id = "autoButton",
-		width = display.contentWidth/2,
+		width = display.contentWidth*.8,
 		height = 100,
 		emboss = true,
 		fontSize = font4,
@@ -65,7 +76,8 @@ function scene:create( event )
 		fillColor = { default={ 232/255, 100/255, 37/255}, over={ 1, 1, 1, 1 } },
 		onRelease = dartFunction
 	}
-
+	auto.y = yCenter + (yCenter*.25)
+	auto.x = xCenter
 	
 	local function diskFunction( event )
 		composer.gotoScene( "dartSide" )
@@ -73,7 +85,7 @@ function scene:create( event )
 
 	local sideArm = widget.newButton{
 		id = "sidearmButton",
-		width = display.contentWidth/2,
+		width = display.contentWidth*.8,
 		height = 100,
 		emboss = true,
 		fontSize = font4,
@@ -85,7 +97,8 @@ function scene:create( event )
 		fillColor = { default={ 232/255, 100/255, 37/255}, over={ 1, 1, 1, 1 } },
 		onRelease = sidearmFunction
 	}
-
+	sideArm.y = yCenter + (yCenter*.5)
+	sideArm.x = xCenter
 
 
 	localGroup:insert(manuel)	

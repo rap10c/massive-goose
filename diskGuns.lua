@@ -6,14 +6,24 @@ local scene = composer.newScene()
 
 function scene:create( event )
 
+	--display.setDefault( "background", 29/255, 89/255, 5/255, 1 )
+
+	local gunType = display.newText{	
+	text ="Disk-Type Weapons", 
+	x = xCenter, 
+	y = yCenter, 
+	font = native.systemFont, 
+	fontSize = font5,
+	width = display.contentWidth*.8,
+	align = "center"}
 
 	local function diskFunction( event )
-		composer.gotoScene( "diskManuel" )
+		composer.gotoScene( "dartManuel" )
 	end
 
 	local manuel = widget.newButton{
 		id = "manuelButton",
-		width = display.contentWidth/2,
+		width = display.contentWidth*.8,
 		height = 100,
 		emboss = true,
 		fontSize = font4,
@@ -25,15 +35,16 @@ function scene:create( event )
 		fillColor = { default={ 232/255, 100/255, 37/255}, over={ 1, 1, 1, 1 } },
 		onRelease = manuelFunction
 	}
-
+	manuel.y = yCenter*.5
+	manuel.x = xCenter
 
 	local function diskFunction( event )
-		composer.gotoScene( "diskSemi" )
+		composer.gotoScene( "dartSemi" )
 	end
 
 	local semiAuto = widget.newButton{
 		id = "semiButton",
-		width = display.contentWidth/2,
+		width = display.contentWidth*.8,
 		height = 100,
 		emboss = true,
 		fontSize = font4,
@@ -45,15 +56,17 @@ function scene:create( event )
 		fillColor = { default={ 232/255, 100/255, 37/255}, over={ 1, 1, 1, 1 } },
 		onRelease = semiFunction
 	}
+	semiAuto.y = yCenter*.75
+	semiAuto.x = xCenter
 
 
 	local function diskFunction( event )
-		composer.gotoScene( "diskAuto" )
+		composer.gotoScene( "dartAuto" )
 	end	
 
 	local auto = widget.newButton{
 		id = "autoButton",
-		width = display.contentWidth/2,
+		width = display.contentWidth*.8,
 		height = 100,
 		emboss = true,
 		fontSize = font4,
@@ -65,15 +78,16 @@ function scene:create( event )
 		fillColor = { default={ 232/255, 100/255, 37/255}, over={ 1, 1, 1, 1 } },
 		onRelease = dartFunction
 	}
-
+	auto.y = yCenter + (yCenter*.25)
+	auto.x = xCenter
 	
 	local function diskFunction( event )
-		composer.gotoScene( "diskSide" )
+		composer.gotoScene( "dartSide" )
 	end
 
 	local sideArm = widget.newButton{
 		id = "sidearmButton",
-		width = display.contentWidth/2,
+		width = display.contentWidth*.8,
 		height = 100,
 		emboss = true,
 		fontSize = font4,
@@ -85,7 +99,8 @@ function scene:create( event )
 		fillColor = { default={ 232/255, 100/255, 37/255}, over={ 1, 1, 1, 1 } },
 		onRelease = sidearmFunction
 	}
-
+	sideArm.y = yCenter + (yCenter*.5)
+	sideArm.x = xCenter
 
 
 	localGroup:insert(manuel)	

@@ -1,0 +1,9 @@
+to get things:
+
+git pull origin master
+
+to put things:
+
+git add -A
+git commit -m "put special meaningful message here :D"
+git push origin master
